@@ -1,0 +1,36 @@
+services:
+  artemis:
+    image: apache/activemq-artemis:latest
+    container_name: artemis-mq-service
+    ports:
+      - "8161:8161"  # Web Console
+      - "5672:5672"  # AMQP
+      - "1883:1883"  # MQTT
+      - "61616:61616"  # OpenWire
+    environment:
+      - ARTEMIS_USER=artemis
+      - ARTEMIS_PASSWORD=artemis
+    volumes:
+      - ./artemis-data:/var/lib/activemq/artemis
+    networks:
+      - network
+
+  artemis2:
+    image: apache/activemq-artemis:latest
+    container_name: artemis-mq-service2
+    ports:
+      - "8162:8161"  # Web Console
+      - "5673:5672"  # AMQP
+      - "1884:1883"  # MQTT
+      - "61617:61616"  # OpenWire
+    environment:
+      - ARTEMIS_USER=artemis
+      - ARTEMIS_PASSWORD=artemis
+    volumes:
+      - ./artemis-data2:/var/lib/activemq/artemis
+    networks:
+      - network
+
+networks:
+  network:
+    external: true

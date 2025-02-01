@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: timazay
+      changes:
+        - insert:
+            tableName: children
+            columns:
+              - column:
+                  name: id
+                  value: "1"
+              - column:
+                  name: name
+                  value: "Ivan"
+              - column:
+                  name: surname
+                  value: "Petrov"
+              - column:
+                  name: age
+                  value: "10"
+              - column:
+                  name: day
+                  value: "NEW"

@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: timazay
+      changes:
+        - createTable:
+            tableName: children
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    autoIncrement: true
+              - column:
+                  name: name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: surname
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: age
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: day
+                  type: varchar(50)
