@@ -43,7 +43,7 @@ public class SendTestController {
     }
 
 
-    @PostMapping("/receive")
+    @GetMapping("/receive")
     public ResponseEntity<?> receive(@RequestParam Long childId) throws Exception {
         Config config = service.receive(childId);
         StateMachine<ChildDay, ChildEvent> sm = typeSafeSMService.receiveSM(config);
